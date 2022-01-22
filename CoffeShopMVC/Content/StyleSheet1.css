@@ -1,0 +1,21 @@
+﻿body {
+    background-image: url(bg.jpg);
+    
+}
+
+.navbar-menu a {
+    color: #fff;
+    font-size: 13px;
+    font-family: 'Raleway',sans-serif;
+    font-weight: 100;
+    padding: 12px 15px;
+    border-radius: 2px;
+    display: inline-block;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: 0.4s;
+}
+    .navbar-menu a:hover {
+        background-color: #fff;
+        color: #fff !important;
+    }

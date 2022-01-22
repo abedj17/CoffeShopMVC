@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+@{
+    ViewBag.Title = "Home Page";
+    Layout = null;
+}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>landing page</title>
+    <link rel="stylesheet" href="~/Content/style.css">
+    @*<link href='http://fonts.googleapis.com/css?family=Great+Vibes' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>*@
+    <script src="https://kit.fontawesome.com/621136387c.js" crossorigin="anonymous"></script>
+    <style>
+        body{
+            background-image:url("../../Content/bg.jpg");
+        }
+
+    </style>
+</head>
+<body>
+    <nav class="navbar" style="background-color: rgba(255, 165, 0, 0.4); ">
+        <div class="container" >
+            <h1 class="logo"><i class="fas fa-mug-hot"></i></h1>
+            <div class="navbar-menu" >
+                <a href="/Home/index">home</a>
+                <a href="/Products/Index">menu</a>
+                <a href="#">VIP</a>
+                @if(Session["ID"] == null)
+                {
+                    <a href="@Url.Action("Login","Users")"><i class="fas fa-sign-in-alt"></i>  Login</a>
+                }
+                else {
+                    <a href="@Url.Action("Logout","Users")"><i class="fas fa-sign-out-alt"></i>  Logout</a>
+                }
+                <a href="@Url.Action("MyCart","Orders",new { id = Session["ID"]})"><i class="fas fa-cart-plus"></i>  My Cart</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="description">
+        <h1> Welcome To Coffe Shop </h1>
+        <p><i>Coffe Shop Come to here to drink and to eat :)</i></p>
+        <button>find your Taste</button>
+    </div>
+</body>
+</html>
